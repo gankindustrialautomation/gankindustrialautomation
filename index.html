@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GANK Industrial Automation & Engineering Solutions</title>
+
+    <meta name="description"
+          content="GANK Industrial Automation & Engineering Solutions provides PLC, HMI, electrical design, panel engineering and industrial automation solutions.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0a0f14;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 15, 20, 0.95);
+            border-bottom: 1px solid #26313b;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #00d4ff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 80px;
+            background:
+                radial-gradient(circle at 80% 30%, #12364a 0%, transparent 35%),
+                linear-gradient(135deg, #080d12, #101820);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #00d4ff;
+        }
+
+        .hero p {
+            color: #b7c3cc;
+            font-size: 20px;
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .tagline {
+            color: #00d4ff;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: #00d4ff;
+            color: #061018;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 1px solid #00d4ff;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: #00d4ff;
+        }
+
+        .section-subtitle {
+            color: #8e9aa4;
+            margin-bottom: 45px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #0d141b;
+        }
+
+        .about-text {
+            max-width: 850px;
+            color: #c4cdd4;
+            font-size: 18px;
+        }
+
+        /* SERVICES */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #111b24;
+            border: 1px solid #24323e;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: #00d4ff;
+        }
+
+        .card-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #9caab5;
+        }
+
+        /* TECHNOLOGY */
+
+        .technology {
+            background: #0d141b;
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .tech {
+            padding: 12px 20px;
+            border: 1px solid #33434f;
+            border-radius: 30px;
+            color: #c5d0d8;
+        }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: linear-gradient(135deg, #0c2836, #10202b);
+            border: 1px solid #1d6077;
+            padding: 50px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #b7c3cc;
+            margin: 10px 0 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 8%;
+            text-align: center;
+            background: #070b0f;
+            color: #75818a;
+            border-top: 1px solid #202a32;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav .links {
+                display: none;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            .hero {
+                padding: 120px 6% 70px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .contact-box {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">
+        GANK<span>.</span>
+    </div>
+
+    <div class="links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tagline">
+            Precision in Every Motion
+        </div>
+
+        <h1>
+            Industrial<br>
+            <span>Automation</span><br>
+            Solutions
+        </h1>
+
+        <p>
+            GANK Industrial Automation & Engineering Solutions
+            delivers reliable automation, electrical engineering,
+            PLC, HMI and panel solutions for modern industries.
+        </p>
+
+        <a href="#services" class="btn">
+            Our Services
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+            Contact Us
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+    <h2 class="section-title">
+        About <span>GANK</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Engineering ideas into reliable industrial solutions.
+    </p>
+
+    <p class="about-text">
+        GANK Industrial Automation & Engineering Solutions is focused
+        on industrial automation, electrical engineering and machine
+        control solutions. Our work combines practical engineering,
+        automation technology and precision electrical design to create
+        efficient and reliable systems.
+    </p>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <h2 class="section-title">
+        Our <span>Services</span>
+    </h2>
+
+    <p class="section-subtitle">
+        Engineering solutions built for industrial applications.
+    </p>
+
+    <div class="services-grid">
+
+        <div class="card">
+            <div class="card-icon">⚙️</div>
+            <h3>PLC Programming</h3>
+            <p>
+                PLC programming, modification, troubleshooting and
+                machine automation solutions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🖥️</div>
+            <h3>HMI Development</h3>
+            <p>
+                User-friendly HMI development, machine visualization,
+                alarms and operator interfaces.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">📐</div>
+            <h3>Electrical Design</h3>
+            <p>
+                Professional electrical drawings, control circuit
+                design and machine documentation.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔌</div>
+            <h3>Panel Engineering</h3>
+            <p>
+                Electrical panel design, component selection,
+                wiring and control panel solutions.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3>Industrial Automation</h3>
+            <p>
+                Automation solutions for machines and industrial
+                production systems.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🛠️</div>
+            <h3>Machine Solutions</h3>
+            <p>
+                Engineering support for special purpose machines
+                and automated production equipment.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- TECHNOLOGY -->
+
+<section id="technology" class="technology">
+
+    <h2 class="section-title">
+        <span>Technology</span> We Work With
+    </h2>
+
+    <p class="section-subtitle">
+        Automation and electrical technologies for modern machines.
+    </p>
+
+    <div class="tech-list">
+
+        <div class="tech">Siemens PLC</div>
+        <div class="tech">Siemens HMI</div>
+        <div class="tech">Schneider Automation</div>
+        <div class="tech">PLC Programming</div>
+        <div class="tech">HMI Development</div>
+        <div class="tech">VFD Systems</div>
+        <div class="tech">Electrical Design</div>
+        <div class="tech">Control Panels</div>
+        <div class="tech">Industrial Automation</div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="contact-box">
+
+        <h2 class="section-title">
+            Let's Build Something <span>Better</span>
+        </h2>
+
+        <p>
+            Looking for an automation or electrical engineering
+            solution for your machine?
+        </p>
+
+        <a href="mailto:gankindustrialautomation@gmail.com"
+           class="btn">
+            Send an Enquiry
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    © 2026 GANK Industrial Automation & Engineering Solutions.
+    All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
