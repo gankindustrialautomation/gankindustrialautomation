@@ -1,482 +1,234 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06131f">
+  <meta name="description" content="GANK Industrial Automation & Engineering Solutions — electrical engineering, PLC/HMI, EPLAN, control panel design and industrial automation.">
+  <title>GANK Industrial Automation & Engineering Solutions</title>
+  <style>
+/* GANK Industrial Automation — GitHub Pages version */
+:root{--bg:#06131f;--bg2:#081722;--panel:#0b1c2a;--line:#193347;--blue:#168cff;--blue2:#42b2ff;--text:#f5f9fc;--muted:#9aabba}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}a{text-decoration:none;color:inherit}
+.site-header{position:fixed;z-index:1000;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:10px 5%;background:rgba(6,19,31,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{display:flex;align-items:center;gap:12px}.brand img{width:62px;height:48px;object-fit:contain}.brand span{font-size:12px;font-weight:800;letter-spacing:1px}.brand b{color:var(--blue2)}.brand small{display:block;font-size:9px;letter-spacing:1.4px;color:#aebbc5}
+.nav{display:flex;align-items:center;gap:22px}.nav>a{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#c0ccd5;transition:.25s}.nav>a:hover{color:var(--blue2)}.nav .nav-cta{padding:11px 16px;border-radius:7px;background:var(--blue);color:white}.menu-toggle{display:none;background:none;border:0;color:white;font-size:26px}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:150px 8% 100px;background-image:linear-gradient(90deg,rgba(6,19,31,.99) 0%,rgba(6,19,31,.91) 52%,rgba(6,19,31,.58) 100%),url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1800&q=85");background-size:cover;background-position:center}
+.hero-content{max-width:850px;position:relative;z-index:2}.eyebrow,.label{color:var(--blue2);font-size:11px;font-weight:800;letter-spacing:3px}.eyebrow{margin-bottom:20px}.hero h1{font-size:clamp(44px,6vw,78px);line-height:1.06;letter-spacing:-2px;margin-bottom:18px}.hero h1 span,h2 span{color:var(--blue2)}.hero-line{font-size:11px;letter-spacing:4px;color:#d7e5ee;font-weight:800;margin-bottom:20px}.hero p{max-width:700px;color:#b7c5cf;font-size:17px}.actions{display:flex;gap:12px;margin-top:30px}.btn{display:inline-flex;padding:13px 20px;border-radius:7px;font-weight:800;font-size:12px;letter-spacing:.5px}.primary{background:var(--blue)}.ghost{border:1px solid #318ed0}.hero-stats{position:absolute;right:7%;bottom:10%;display:grid;grid-template-columns:1fr 1fr;gap:10px;z-index:2}.hero-stats div{min-width:145px;padding:14px 18px;background:rgba(5,18,29,.72);border:1px solid rgba(66,178,255,.22);border-radius:8px}.hero-stats strong{display:block;font-size:13px}.hero-stats span{font-size:11px;color:var(--muted)}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#071723}.trust div{text-align:center;padding:20px 10px;font-size:10px;letter-spacing:1.7px;color:#b8c8d3}
+.section{padding:100px 7%;background:var(--bg)}.darker{background:var(--bg2)}.section-head{max-width:850px;margin-bottom:45px}.section-head h2,.split h2,.contact-box h2{font-size:clamp(32px,4vw,50px);line-height:1.15;margin:10px 0 15px}.section-head p,.split p,.contact-box p{color:var(--muted);max-width:780px}.split{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.split p{margin:18px 0}.text-link{color:var(--blue2);font-weight:800;font-size:13px}.about-panel{padding:28px;background:linear-gradient(135deg,rgba(11,35,51,.94),rgba(8,21,33,.94)),url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85') center/cover;border:1px solid var(--line);border-radius:14px}.about-panel>img{width:160px;height:80px;object-fit:contain;margin-bottom:12px}.about-panel>div{padding:18px 0;border-top:1px solid rgba(255,255,255,.08)}.about-panel b{display:block;color:var(--blue2);font-size:11px;letter-spacing:1.5px}.about-panel span{display:block;color:#b5c1ca;font-size:13px;margin-top:5px}
+.cards{display:grid;gap:18px}.six{grid-template-columns:repeat(3,1fr)}.service-card{min-height:280px;padding:28px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(255,255,255,.09);border-radius:12px;overflow:hidden;background:linear-gradient(rgba(6,19,31,.50),rgba(6,19,31,.96)),var(--card-image) center/cover;transition:.3s}.service-card:hover,.project:hover{transform:translateY(-7px);border-color:var(--blue)}.num{font-size:46px;color:rgba(255,255,255,.12);font-weight:900;align-self:flex-end}.service-line{width:45px;height:3px;background:var(--blue);margin-bottom:20px}.service-card h3{font-size:20px;margin-bottom:8px}.service-card p,.feature p{color:var(--muted);font-size:13px}.feature{padding:28px;background:#091b29;border:1px solid var(--line);border-radius:12px}.feature strong{color:rgba(66,178,255,.55);font-size:30px}.feature h3{margin:10px 0 7px}
+.brand-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.brand-card{min-height:120px;padding:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#081a28;border:1px solid var(--line);border-radius:12px}.brand-card img{width:130px;height:45px;object-fit:contain}.brand-card b{font-size:10px;letter-spacing:1px;color:#d8e4ec}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.team-card{background:#081a28;border:1px solid var(--line);border-radius:12px;overflow:hidden}.team-card img{display:block;width:100%;height:300px;object-fit:cover;object-position:center top}.team-card div{padding:17px}.team-card small{color:var(--blue2);font-size:9px;letter-spacing:1.5px;font-weight:800}.team-card h3{font-size:17px;margin:4px 0}.team-card p{color:var(--muted);font-size:12px}
+.project-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:15px}.project{height:310px;padding:22px;display:flex;align-items:flex-end;border:1px solid var(--line);border-radius:12px;background:linear-gradient(rgba(6,19,31,.2),rgba(6,19,31,.96)),var(--project-image) center/cover;transition:.3s}.project small{color:var(--blue2);font-weight:800;letter-spacing:1.5px;font-size:9px}.project h3{font-size:17px;margin:5px 0}.project p{font-size:11px;color:var(--muted)}
+.faq{max-width:900px}.faq details{border-bottom:1px solid var(--line);padding:18px 0}.faq summary{cursor:pointer;font-weight:700;list-style:none}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";float:right;color:var(--blue2);font-size:20px}.faq details[open] summary:after{content:"−"}.faq p{color:var(--muted);padding:12px 25px 0 0;font-size:14px}
+.contact-section{padding-top:40px}.contact-box{padding:50px;background:linear-gradient(135deg,#0a2638,#071723);border:1px solid #1e5c7b;border-radius:16px}.contact-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.contact-item{display:flex;align-items:center;gap:13px;padding:17px;background:#071824;border:1px solid var(--line);border-radius:9px}.contact-item b{font-size:24px;color:var(--blue2)}.contact-item span{font-size:10px;color:var(--muted)}.contact-item strong{color:#e8f0f5;font-size:12px}.contact-item.accent{border-color:#237da7}
+footer{padding:55px 7% 20px;background:#040c13;border-top:1px solid var(--line)}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px}.footer-grid img{width:170px;height:65px;object-fit:contain}.footer-grid p{color:var(--muted);max-width:400px;font-size:13px}.footer-grid h4{font-size:11px;letter-spacing:1.5px;color:var(--blue2);margin-bottom:15px}.footer-grid a{display:block;color:#9eacb6;font-size:12px;margin:7px 0}.copyright{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);color:#71818d;font-size:10px;display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:900px){.nav{position:absolute;top:69px;right:5%;left:5%;display:none;flex-direction:column;align-items:stretch;padding:15px;background:#06131f;border:1px solid var(--line);border-radius:10px}.nav.open{display:flex}.nav a{padding:10px}.menu-toggle{display:block}.six{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.brand-grid{grid-template-columns:repeat(2,1fr)}.team-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:1fr 1fr}.hero-stats{position:static;margin-top:35px}.hero{display:block;padding-top:145px}.hero-stats{grid-template-columns:1fr 1fr}.trust{grid-template-columns:1fr 1fr}.contact-actions{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.site-header{padding:8px 4%}.brand span{display:none}.brand img{width:58px}.section{padding:75px 5%}.hero{padding:125px 5% 70px}.hero h1{font-size:43px}.hero-line{letter-spacing:2px}.six,.team-grid,.project-grid{grid-template-columns:1fr}.brand-grid{grid-template-columns:1fr 1fr}.hero-stats{grid-template-columns:1fr 1fr}.hero-stats div{min-width:0}.copyright{display:block}.copyright span{display:block;margin-top:8px}}
 
-    <title>GANK Industrial Automation & Engineering Solutions</title>
+.brand-card img{max-width:150px;max-height:48px}.service-card,.project{background-blend-mode:normal}.team-card img{background:#0b1c2a}
 
-    <meta name="description"
-          content="GANK Industrial Automation & Engineering Solutions provides PLC, HMI, electrical design, panel engineering and industrial automation solutions.">
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0a0f14;
-            color: white;
-            line-height: 1.6;
-        }
-
-        /* NAVBAR */
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 15, 20, 0.95);
-            border-bottom: 1px solid #26313b;
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            color: #00d4ff;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #00d4ff;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 120px 8% 80px;
-            background:
-                radial-gradient(circle at 80% 30%, #12364a 0%, transparent 35%),
-                linear-gradient(135deg, #080d12, #101820);
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .hero h1 {
-            font-size: clamp(45px, 7vw, 85px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .hero h1 span {
-            color: #00d4ff;
-        }
-
-        .hero p {
-            color: #b7c3cc;
-            font-size: 20px;
-            max-width: 700px;
-            margin-bottom: 35px;
-        }
-
-        .tagline {
-            color: #00d4ff;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            background: #00d4ff;
-            color: #061018;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .btn:hover {
-            background: white;
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 1px solid #00d4ff;
-        }
-
-        /* SECTIONS */
-
-        section {
-            padding: 90px 8%;
-        }
-
-        .section-title {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
-
-        .section-title span {
-            color: #00d4ff;
-        }
-
-        .section-subtitle {
-            color: #8e9aa4;
-            margin-bottom: 45px;
-        }
-
-        /* ABOUT */
-
-        .about {
-            background: #0d141b;
-        }
-
-        .about-text {
-            max-width: 850px;
-            color: #c4cdd4;
-            font-size: 18px;
-        }
-
-        /* SERVICES */
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 22px;
-        }
-
-        .card {
-            background: #111b24;
-            border: 1px solid #24323e;
-            padding: 30px;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-7px);
-            border-color: #00d4ff;
-        }
-
-        .card-icon {
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            color: #9caab5;
-        }
-
-        /* TECHNOLOGY */
-
-        .technology {
-            background: #0d141b;
-        }
-
-        .tech-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .tech {
-            padding: 12px 20px;
-            border: 1px solid #33434f;
-            border-radius: 30px;
-            color: #c5d0d8;
-        }
-
-        /* CONTACT */
-
-        .contact-box {
-            background: linear-gradient(135deg, #0c2836, #10202b);
-            border: 1px solid #1d6077;
-            padding: 50px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .contact-box p {
-            color: #b7c3cc;
-            margin: 10px 0 25px;
-        }
-
-        /* FOOTER */
-
-        footer {
-            padding: 30px 8%;
-            text-align: center;
-            background: #070b0f;
-            color: #75818a;
-            border-top: 1px solid #202a32;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
-
-            nav {
-                padding: 15px 5%;
-            }
-
-            nav .links {
-                display: none;
-            }
-
-            section {
-                padding: 70px 6%;
-            }
-
-            .hero {
-                padding: 120px 6% 70px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .contact-box {
-                padding: 30px 20px;
-            }
-        }
-    </style>
+</style>
 </head>
-
 <body>
 
-<!-- NAVIGATION -->
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="GANK home">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvDjyEFg_k6oYz4X5oNVkJ7WSLt4b_DvlN51isTAL4vH2cXuF9dxS3tnNVlikPyWmZpk2yOZXHQr4y-7IHFM8zqy-_6BIHoVMfIdIrbm3-r-FTk7r_KrMjNOAD3tBZJMJOs7_OgGN36X-6_aSy8bFI1T6MJsTTWMlQUKORJc6S1JIzNFD1frzQztc7Chk/w537-h302/ChatGPT%20Image%20Jun%205,%202026,%2009_28_36%20PM%20(1).png" alt="GANK Industrial Automation logo">
+    <span>GANK <b>INDUSTRIAL AUTOMATION</b><small>AND ENGINEERING SOLUTIONS</small></span>
+  </a>
+  <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#technology">Technology</a>
+    <a href="#team">Team</a>
+    <a href="#projects">Projects</a>
+    <a href="#faq">FAQ</a>
+    <a class="nav-cta" href="#contact">Get a Quote</a>
+  </nav>
+</header>
 
-<nav>
-    <div class="logo">
-        GANK<span>.</span>
+<main>
+<section class="hero" id="home">
+  <div class="hero-overlay"></div>
+  <div class="hero-content reveal">
+    <div class="eyebrow">PRECISION IN EVERY MOTION</div>
+    <h1>Engineering Intelligence<br>for <span>Modern Industry.</span></h1>
+    <div class="hero-line">ENGINEERING&nbsp;&nbsp;•&nbsp;&nbsp;AUTOMATION&nbsp;&nbsp;•&nbsp;&nbsp;INNOVATION</div>
+    <p>GANK Industrial Automation & Engineering Solutions delivers professional electrical engineering, industrial automation, EPLAN design and control system solutions built for reliability, efficiency and performance.</p>
+    <div class="actions">
+      <a class="btn primary" href="#services">Explore Services</a>
+      <a class="btn ghost" href="#contact">Start a Project</a>
     </div>
-
-    <div class="links">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#technology">Technology</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="tagline">
-            Precision in Every Motion
-        </div>
-
-        <h1>
-            Industrial<br>
-            <span>Automation</span><br>
-            Solutions
-        </h1>
-
-        <p>
-            GANK Industrial Automation & Engineering Solutions
-            delivers reliable automation, electrical engineering,
-            PLC, HMI and panel solutions for modern industries.
-        </p>
-
-        <a href="#services" class="btn">
-            Our Services
-        </a>
-
-        <a href="#contact" class="btn btn-outline">
-            Contact Us
-        </a>
-
-    </div>
-
+  </div>
+  <div class="hero-stats reveal">
+    <div><strong>PLC & HMI</strong><span>Solutions</span></div>
+    <div><strong>Electrical</strong><span>Engineering</span></div>
+    <div><strong>EPLAN</strong><span>Design</span></div>
+    <div><strong>End-to-End</strong><span>Support</span></div>
+  </div>
 </section>
 
-
-<!-- ABOUT -->
-
-<section id="about" class="about">
-
-    <h2 class="section-title">
-        About <span>GANK</span>
-    </h2>
-
-    <p class="section-subtitle">
-        Engineering ideas into reliable industrial solutions.
-    </p>
-
-    <p class="about-text">
-        GANK Industrial Automation & Engineering Solutions is focused
-        on industrial automation, electrical engineering and machine
-        control solutions. Our work combines practical engineering,
-        automation technology and precision electrical design to create
-        efficient and reliable systems.
-    </p>
-
+<section class="trust">
+  <div>Electrical Engineering</div><div>Industrial Automation</div>
+  <div>EPLAN Engineering</div><div>Control System Design</div>
 </section>
 
-
-<!-- SERVICES -->
-
-<section id="services">
-
-    <h2 class="section-title">
-        Our <span>Services</span>
-    </h2>
-
-    <p class="section-subtitle">
-        Engineering solutions built for industrial applications.
-    </p>
-
-    <div class="services-grid">
-
-        <div class="card">
-            <div class="card-icon">⚙️</div>
-            <h3>PLC Programming</h3>
-            <p>
-                PLC programming, modification, troubleshooting and
-                machine automation solutions.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🖥️</div>
-            <h3>HMI Development</h3>
-            <p>
-                User-friendly HMI development, machine visualization,
-                alarms and operator interfaces.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">📐</div>
-            <h3>Electrical Design</h3>
-            <p>
-                Professional electrical drawings, control circuit
-                design and machine documentation.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🔌</div>
-            <h3>Panel Engineering</h3>
-            <p>
-                Electrical panel design, component selection,
-                wiring and control panel solutions.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🤖</div>
-            <h3>Industrial Automation</h3>
-            <p>
-                Automation solutions for machines and industrial
-                production systems.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="card-icon">🛠️</div>
-            <h3>Machine Solutions</h3>
-            <p>
-                Engineering support for special purpose machines
-                and automated production equipment.
-            </p>
-        </div>
-
+<section class="section" id="about">
+  <div class="split">
+    <div class="reveal">
+      <div class="label">ABOUT GANK</div>
+      <h2>Engineering Solutions Built Around <span>Real Industrial Needs.</span></h2>
+      <p>GANK Industrial Automation & Engineering Solutions is a focused engineering team delivering electrical design, industrial automation and technical documentation solutions.</p>
+      <p>We combine practical engineering knowledge with modern design tools to create efficient, professional and scalable solutions for industrial applications.</p>
+      <a class="text-link" href="#contact">Talk to our engineering team →</a>
     </div>
-
-</section>
-
-
-<!-- TECHNOLOGY -->
-
-<section id="technology" class="technology">
-
-    <h2 class="section-title">
-        <span>Technology</span> We Work With
-    </h2>
-
-    <p class="section-subtitle">
-        Automation and electrical technologies for modern machines.
-    </p>
-
-    <div class="tech-list">
-
-        <div class="tech">Siemens PLC</div>
-        <div class="tech">Siemens HMI</div>
-        <div class="tech">Schneider Automation</div>
-        <div class="tech">PLC Programming</div>
-        <div class="tech">HMI Development</div>
-        <div class="tech">VFD Systems</div>
-        <div class="tech">Electrical Design</div>
-        <div class="tech">Control Panels</div>
-        <div class="tech">Industrial Automation</div>
-
+    <div class="about-panel reveal">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvDjyEFg_k6oYz4X5oNVkJ7WSLt4b_DvlN51isTAL4vH2cXuF9dxS3tnNVlikPyWmZpk2yOZXHQr4y-7IHFM8zqy-_6BIHoVMfIdIrbm3-r-FTk7r_KrMjNOAD3tBZJMJOs7_OgGN36X-6_aSy8bFI1T6MJsTTWMlQUKORJc6S1JIzNFD1frzQztc7Chk/w537-h302/ChatGPT%20Image%20Jun%205,%202026,%2009_28_36%20PM%20(1).png" alt="GANK logo">
+      <div><b>OUR APPROACH</b><span>Practical engineering with professional documentation and structured design methodology.</span></div>
+      <div><b>OUR FOCUS</b><span>Quality, reliability, efficiency and customer-oriented engineering solutions.</span></div>
+      <div><b>OUR VISION</b><span>To build a strong engineering brand through innovation, collaboration and technical excellence.</span></div>
     </div>
-
+  </div>
 </section>
 
+<section class="section darker" id="services">
+  <div class="section-head reveal">
+    <div class="label">WHAT WE DO</div>
+    <h2>Professional <span>Engineering Services.</span></h2>
+    <p>From electrical documentation to industrial automation, we provide engineering support across multiple disciplines.</p>
+  </div>
+  <div class="cards six">
+    <article class="service-card reveal" style="--card-image:url("https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=85")">
+      <div class="num">01</div><div class="service-line"></div>
+      <h3>Control Panel Engineering</h3><p>Electrical schematic design, panel layouts and professional control panel documentation.</p>
+    </article><article class="service-card reveal" style="--card-image:url("https://images.unsplash.com/photo-1563770660941-10a63607692e?auto=format&fit=crop&w=1200&q=85")">
+      <div class="num">02</div><div class="service-line"></div>
+      <h3>Industrial Automation</h3><p>PLC based automation, control systems and industrial machine automation solutions.</p>
+    </article><article class="service-card reveal" style="--card-image:url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85")">
+      <div class="num">03</div><div class="service-line"></div>
+      <h3>EPLAN Engineering</h3><p>Professional EPLAN schematics, terminal plans, reports, macros and documentation.</p>
+    </article><article class="service-card reveal" style="--card-image:url("https://images.unsplash.com/photo-1581092919535-7146ff1a5f3d?auto=format&fit=crop&w=1200&q=85")">
+      <div class="num">04</div><div class="service-line"></div>
+      <h3>Control Panel Design</h3><p>Control panel layouts, component selection and electrical design documentation.</p>
+    </article><article class="service-card reveal" style="--card-image:url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85")">
+      <div class="num">05</div><div class="service-line"></div>
+      <h3>Technical Documentation</h3><p>Structured electrical drawings, BOM generation and professional documentation.</p>
+    </article><article class="service-card reveal" style="--card-image:url("https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=85")">
+      <div class="num">06</div><div class="service-line"></div>
+      <h3>Engineering Consultancy</h3><p>Technical support and engineering consultation for electrical and automation projects.</p>
+    </article>
+  </div>
+</section>
 
-<!-- CONTACT -->
+<section class="section" id="technology">
+  <div class="section-head reveal">
+    <div class="label">TECHNOLOGIES & PLATFORMS</div>
+    <h2>Engineering with <span>Industry-Leading Technologies.</span></h2>
+    <p>We work with professional electrical design software and leading industrial automation platforms.</p>
+  </div>
+  <div class="brand-grid">
+    <div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEidbztoaeWX443_raV9ka8lwjTyfMxMzhrCrcArpQzWuwdT7LUQlNgyXhAREySY_g-YBaq6PYSEDP9lJSSSZQD4gKbn9YRcz0fEmVCJaCI8wNmE6gRjSsnwPddjZHEBobRb3PDAV5CzpvoKmq3HQ_6Hs4FY66rvQzjcOtPOuYBvZf_RtskImbbZflR0uTFj/s1600/images.png" alt="EPLAN logo"><b>EPLAN</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjAt56Sd3dMhLK0yZFRCMlk2fca8WswX0hBA9VNPc2WDH-ioCHY7UTBC6tohh8JTBAvIhyphenhyphen_9ew7gzz_6jH7tkPRuMamch_MA2ZYZyQvvsMABttKTolcaq8cb_chyZ0BgWzpBDUrV__N0f6SNPIc_MrTYm3Z8yB8f6ZTFZdI4GnWykqBC10H_s1620sgDMIN/s1600/Siemens-logo.png" alt="SIEMENS logo"><b>SIEMENS</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjFNm9F6_SRM7b4035Nyn3Gi_HQf-_gpLTtp-Sh8mlh6C1dA1OS2Pb2eMW7foGRMGd-euPbeYv30282X6vdTihOKHkWtRMb5N58EyiNF-W4HWi7p74bcxW6m1_faSOqhTeuQrfJ6u6S-oRpPNYgVKuNKp78Gcbi73u9fuCBJKRdd1JwIrMKxDixO6p0ZetV/s1600/images%20(1).png" alt="OMRON logo"><b>OMRON</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhGlwNxFbeERTu0zx_W_9U3fbkCRjuz4e4yXq0Dvm34nceJyzbIwz8mw_SJ7zlZj7obdQ8x2Sa5ZoT3GZ8m1BAEQN1QzWxoCBynuMNvDmMYHXV6UPHd8VTRBoC75W_YvkAc_nXw-NbTUtTGf__DtS9VDrk8-1LE99IinEf6uOb8Q_l18JPhDn6PkiNn7Nr4/s1600/images%20(2).png" alt="ABB logo"><b>ABB</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyvfgAtXQcdsXl75qnPL2y8FOBC-0drT7mQe2zgMgVOVAjjzu67bgDZSMc_l231oGkxodu9Liy3O0JEpVSUdDOr-sQW9uml5KmYlPCe7smTOKRV6RtCFcMqGJznCI9fj6r_fwYVKq2ieAKlzAe62VSPzhGWYdQqwoh77AxFa0Py_-PxIP-dyJz5lVawcNO/s216/images.jpg" alt="ALLEN-BRADLEY logo"><b>ALLEN-BRADLEY</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEji-NaltMbHfBkp26-83rGleqEdj7Aag6iloAvaXoxsXiDdsp2l_ohTdTZFq6HODqnDdtVgooLyxqfWnZ03P1DH5Ed_IMmBKWOIHt5cNebtCmX6vRqkokO2HT5Lic7kgnoveCKfN05tAD4ZSpvp5YYWS1ZxYTNnqE7JYC9W3JtHB_7V9n2V6_gMr1C11uCk/s1600/images%20(3).png" alt="SCHNEIDER ELECTRIC logo"><b>SCHNEIDER ELECTRIC</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgtrHd5W5vEoobs8pReKf42GfPrpzF51LMo5LJ_jT2MfgRWitBlH3lIaO1WQslRxxGbkYCz0BAouPv4zWjJPBiwnmxengKqv-p1naku8UhbehaV9BC2bVic14uKaxwGUP1ITgqmzLQlec8CC2LFXFZgcrFzgm7Z97zjPO5BG7UhKkikUOpvEJVHLHQqtwfx/s1600/images%20(4).png" alt="DELTA logo"><b>DELTA</b></div><div class="brand-card reveal"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhTvU7J3IjjlzaKdezaH_xhRKhF0_4sLjr_ksapYVORdY6Z3tJwXFggQWPdfk07jHq8LtMVvgLjYbajOFPWjcEX8WjLZUQLcIfCWUaMd8WAdcjBQwS6Y5UOPXljtgPtJwSvKqolHXV8h_jT8C5eJrru8VifXMgAE64Dsokk7oowBUxZP42fgoNiAO8uhcV2/s1600/Mitsubishi-logo.png" alt="MITSUBISHI ELECTRIC logo"><b>MITSUBISHI ELECTRIC</b></div>
+  </div>
+</section>
 
-<section id="contact">
+<section class="section darker">
+  <div class="section-head reveal">
+    <div class="label">WHY CHOOSE GANK</div>
+    <h2>Engineering Support You Can <span>Rely On.</span></h2>
+  </div>
+  <div class="cards six">
+    <article class="feature reveal"><strong>01</strong><h3>Professional Standards</h3><p>Structured engineering practices and professional documentation.</p></article><article class="feature reveal"><strong>02</strong><h3>Customized Solutions</h3><p>Engineering solutions based on customer and project requirements.</p></article><article class="feature reveal"><strong>03</strong><h3>Cost-Effective Support</h3><p>Practical engineering services designed to deliver real value.</p></article><article class="feature reveal"><strong>04</strong><h3>Quality Documentation</h3><p>Clear, organized and professional technical documentation.</p></article><article class="feature reveal"><strong>05</strong><h3>Modern Engineering Tools</h3><p>Professional software and modern engineering methodologies.</p></article><article class="feature reveal"><strong>06</strong><h3>Collaborative Team</h3><p>A focused team working together toward reliable engineering outcomes.</p></article>
+  </div>
+</section>
 
-    <div class="contact-box">
+<section class="section" id="team">
+  <div class="section-head reveal">
+    <div class="label">OUR FOUNDING TEAM</div>
+    <h2>Four Minds. One <span>Engineering Vision.</span></h2>
+    <p>A team working together with shared ownership and a common commitment to building GANK.</p>
+  </div>
+  <div class="team-grid">
+    <article class="team-card reveal">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRPSFDpj61rl6tHXPZCoE146-BJjbE5QZ4HiHtw5IQr0TjmWj6eF88GjRtNozCHYD-2nSnxtGsaTKeWQ5NzIWsDMooI6JTBfcD4p9QtQ_JdG1LRvOdeY8R1oJDx1qxlKTPE1jntnaRrqehVPCdkYV0SuMFBsXVvkxXAfl8B3hoTH4iwLhBYtNW1Qo02KA/s1600/1000249454.png" alt="GOKUL GK">
+      <div><small>CO-FOUNDER</small><h3>GOKUL GK</h3><p>Electrical & Design Engineer</p></div>
+    </article><article class="team-card reveal">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjU9UpZeLj83TiA_XoMk3HufUlmz22lMRtxlrjPpzg2sL3x8A-NjTX54IABbQ7iDNO5ZFIHby52tUHtBDX1Fz_Tl_sRfkKsYp6DCFbasJFPJZkhDxK61P3pcPo1MXyklXoBbEWKX3eMSSNqWipJ097kKD-aI0ZHKk4ykg4HEaNQxNYKE5ho5Xy0__vN_LQ/s1600/1000249456.png" alt="AMUDHEESAN S">
+      <div><small>CO-FOUNDER</small><h3>AMUDHEESAN S</h3><p>Automation Engineer</p></div>
+    </article><article class="team-card reveal">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiOM-be4ELk0tfJ0txgUboSogFf8Sx0EEM7RCQFVSGxsBoqnQtFZa_XgdTuN4y5bLDTTIlP6Gz_GSwE1GaD9HzVclU25yC2aZGn7kQaZ4sNeGv7IfFp3UL3c1zFOL23mOb17Gm1VEBXXgLCfpkOYhJ2tTyPeu141bk6y5yTA4PYFqsgYgi2U6NO0WdgPp0/s1600/1000249458.png" alt="NAVEEN S">
+      <div><small>CO-FOUNDER</small><h3>NAVEEN S</h3><p>Automation Engineer</p></div>
+    </article><article class="team-card reveal">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmukv9Strk9MkoES9HWmp3jtF-E4nFn3sKXSuF30l9EmyRNw7i1i6JwBCtI5WrtL-_bR8enlfAIE6AaNJadTrMg870fHAcbVsW8p-Pq6aEuHkxskePeqpL3-TwW1bG4zNHG6UHZ3CHiKPmExSw9VvYGQhxXA15TtcdzWKAalmCVkxZYnXTn7C-4XM4ACE/s1600/WhatsApp%20Image%202026-09-05%20at%206.14.32%20AM.jpeg" alt="KAMALESH A">
+      <div><small>CO-FOUNDER</small><h3>KAMALESH A</h3><p>Project Engineer</p></div>
+    </article>
+  </div>
+</section>
 
-        <h2 class="section-title">
-            Let's Build Something <span>Better</span>
-        </h2>
+<section class="section darker" id="projects">
+  <div class="section-head reveal">
+    <div class="label">OUR WORK</div>
+    <h2>Our <span>Engineering Expertise.</span></h2>
+    <p>Automation and engineering solutions for modern manufacturing and industrial applications.</p>
+  </div>
+  <div class="project-grid">
+    <article class="project reveal" style="--project-image:url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85")"><div><small>MOULDING</small><h3>High Pressure Moulding Machines</h3><p>Electrical and automation engineering support for high pressure moulding systems.</p></div></article>
+    <article class="project reveal" style="--project-image:url("https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1200&q=85")"><div><small>FOUNDRY</small><h3>Sand Mixers</h3><p>Control and automation solutions for industrial sand mixing applications.</p></div></article>
+    <article class="project reveal" style="--project-image:url("https://images.unsplash.com/photo-1581092919535-7146ff1a5f3d?auto=format&fit=crop&w=1200&q=85")"><div><small>FOUNDRY</small><h3>Sand Plants</h3><p>Electrical, PLC and automation support for sand plant systems.</p></div></article>
+    <article class="project reveal" style="--project-image:url("https://images.unsplash.com/photo-1563770660941-10a63607692e?auto=format&fit=crop&w=1200&q=85")"><div><small>ROBOTICS</small><h3>PLC to Robot Integration</h3><p>PLC, HMI and robot communication and machine sequence integration.</p></div></article>
+    <article class="project reveal" style="--project-image:url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=85")"><div><small>AUTOMATION</small><h3>SPM Machines</h3><p>Electrical and automation engineering for special purpose machines.</p></div></article>
+  </div>
+</section>
 
-        <p>
-            Looking for an automation or electrical engineering
-            solution for your machine?
-        </p>
+<section class="section" id="faq">
+  <div class="section-head reveal">
+    <div class="label">FAQ</div>
+    <h2>Frequently <span>Asked Questions.</span></h2>
+  </div>
+  <div class="faq">
+    <details><summary>What industries do you support?</summary><p>We support manufacturing, machine building, packaging, process applications, automotive-related industrial systems and special purpose machines.</p></details>
+    <details><summary>Do you provide onsite support?</summary><p>Support can be discussed based on project scope, location and commissioning requirements.</p></details>
+    <details><summary>Which PLC and HMI brands do you work with?</summary><p>Our website currently highlights Siemens, Schneider Electric, Omron, ABB, Allen-Bradley, Delta, Mitsubishi Electric and EPLAN.</p></details>
+    <details><summary>Can you modify an existing machine control system?</summary><p>Yes. PLC/HMI modification, electrical drawing updates and control-panel engineering can be scoped according to the machine and existing documentation.</p></details>
+  </div>
+</section>
 
-        <a href="mailto:gankindustrialautomation@gmail.com"
-           class="btn">
-            Send an Enquiry
-        </a>
-
+<section class="section contact-section" id="contact">
+  <div class="contact-box reveal">
+    <div>
+      <div class="label">GET IN TOUCH</div>
+      <h2>Let's Build Something <span>Better.</span></h2>
+      <p>Looking for an automation or electrical engineering solution for your machine? We'd love to hear from you.</p>
     </div>
-
+    <div class="contact-actions">
+      <a class="contact-item" href="mailto:gankindustrialautomation@gmail.com"><b>✉</b><span>Email<br><strong>gankindustrialautomation@gmail.com</strong></span></a>
+      <a class="contact-item" href="#home"><b>⌖</b><span>Location<br><strong>Tamil Nadu, India</strong></span></a>
+      <a class="contact-item accent" href="mailto:gankindustrialautomation@gmail.com?subject=GANK%20Project%20Enquiry"><b>↗</b><span>Let's Discuss<br><strong>Send an Enquiry</strong></span></a>
+    </div>
+  </div>
 </section>
-
-
-<!-- FOOTER -->
+</main>
 
 <footer>
-
-    © 2026 GANK Industrial Automation & Engineering Solutions.
-    All Rights Reserved.
-
+  <div class="footer-grid">
+    <div><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvDjyEFg_k6oYz4X5oNVkJ7WSLt4b_DvlN51isTAL4vH2cXuF9dxS3tnNVlikPyWmZpk2yOZXHQr4y-7IHFM8zqy-_6BIHoVMfIdIrbm3-r-FTk7r_KrMjNOAD3tBZJMJOs7_OgGN36X-6_aSy8bFI1T6MJsTTWMlQUKORJc6S1JIzNFD1frzQztc7Chk/w537-h302/ChatGPT%20Image%20Jun%205,%202026,%2009_28_36%20PM%20(1).png" alt="GANK logo"><p>Engineering excellence through electrical design, industrial automation and professional technical solutions.</p></div>
+    <div><h4>QUICK LINKS</h4><a href="#about">About</a><a href="#services">Services</a><a href="#team">Team</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+    <div><h4>SERVICES</h4><a href="#services">Electrical Engineering</a><a href="#services">Industrial Automation</a><a href="#services">EPLAN Engineering</a><a href="#services">Control Panel Design</a></div>
+  </div>
+  <div class="copyright">© 2026 GANK Industrial Automation & Engineering Solutions <span>Engineering Excellence. Automation Simplified.</span></div>
 </footer>
 
+<script>
+const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');
+if(menu){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);});}
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+</script>
 </body>
 </html>
